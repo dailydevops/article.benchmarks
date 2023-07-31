@@ -1,4 +1,4 @@
-﻿namespace Benchmark.Shuffle.Benchmarks;
+﻿namespace Shuffle.Benchmarks;
 
 using BenchmarkDotNet.Running;
 

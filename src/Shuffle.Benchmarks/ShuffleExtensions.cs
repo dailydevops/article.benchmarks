@@ -1,4 +1,4 @@
-﻿namespace Benchmark.Shuffle.Benchmarks;
+﻿namespace Shuffle.Benchmarks;
 
 using System;
 using System.Collections.Generic;

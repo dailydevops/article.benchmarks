@@ -1,5 +1,6 @@
-﻿namespace Benchmark.Shuffle.Benchmarks;
+﻿namespace Shuffle.Benchmarks;
 
+using Benchmark.Shuffle.Benchmarks;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Engines;
 using BenchmarkDotNet.Jobs;
@@ -25,19 +26,19 @@ public class ShuffleBenchmarks
 
     [Benchmark(Baseline = true)]
     public void ShuffleLinqOrderBy() =>
-        ShuffleExtensions.ShuffleLinqOrderBy(_values, _random).Consume(_consumer);
+        _values.ShuffleLinqOrderBy(_random).Consume(_consumer);
 
     [Benchmark]
     public void ShuffleLinqOrderByGuid() =>
-        ShuffleExtensions.ShuffleLinqOrderByGuid(_values).Consume(_consumer);
+        _values.ShuffleLinqOrderByGuid().Consume(_consumer);
 
     [Benchmark]
     public void ShuffleFYDToList() =>
-        ShuffleExtensions.ShuffleFYDToList(_values, _random).Consume(_consumer);
+        _values.ShuffleFYDToList(_random).Consume(_consumer);
 
     [Benchmark]
     public void ShuffleFYDToArray() =>
-        ShuffleExtensions.ShuffleFYDToArray(_values, _random).Consume(_consumer);
+        _values.ShuffleFYDToArray(_random).Consume(_consumer);
 
     [Benchmark]
     public void ShuffleMoreLinq() =>
@@ -45,9 +46,9 @@ public class ShuffleBenchmarks
 
     [Benchmark]
     public void ShuffleGiesel() =>
-        ShuffleExtensions.ShuffleGiesel(_values, _random).Consume(_consumer);
+        _values.ShuffleGiesel(_random).Consume(_consumer);
 
     [Benchmark]
     public void ShuffleGieselOptimized() =>
-        ShuffleExtensions.ShuffleGieselOptimized(_values, _random).Consume(_consumer);
+        _values.ShuffleGieselOptimized(_random).Consume(_consumer);
 }
