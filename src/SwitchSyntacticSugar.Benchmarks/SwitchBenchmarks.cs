@@ -9,7 +9,7 @@ using System;
 [SimpleJob(runtimeMoniker: RuntimeMoniker.Net80)]
 public class SwitchBenchmarks
 {
-    [Params(DayOfWeek.Monday, DayOfWeek.Thursday, DayOfWeek.Saturday)]
+    [Params(DayOfWeek.Thursday, DayOfWeek.Saturday)]
     public DayOfWeek Value { get; set; }
 
     [Benchmark(Baseline = true)]

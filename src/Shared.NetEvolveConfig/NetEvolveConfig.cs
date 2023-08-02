@@ -15,6 +15,6 @@ internal sealed class NetEvolveConfig : ManualConfig
         _ = AddDiagnoser(new MemoryDiagnoser(new MemoryDiagnoserConfig()));
         _ = AddDiagnoser(new DisassemblyDiagnoser(new DisassemblyDiagnoserConfig()));
 
-        Orderer = new DefaultOrderer(SummaryOrderPolicy.FastestToSlowest);
+        Orderer = new DefaultOrderer(SummaryOrderPolicy.SlowestToFastest);
     }
 }
