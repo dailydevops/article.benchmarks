@@ -63,17 +63,18 @@ public static class ShuffleExtensions
         [NotNull] Random rng
     )
     {
-        var elements = source.ToArray();
+        var elements = source.ToArray().AsSpan();
 
         T temp;
         for (var i = elements.Length - 1; i > 0; i--)
         {
             var swapIndex = rng.Next(i + 1);
+
             temp = elements[swapIndex];
             elements[swapIndex] = elements[i];
             elements[i] = temp;
         }
 
-        return elements;
+        return elements.ToArray();
     }
 }

@@ -12,6 +12,8 @@
 
     <NoWarn>$(NoWarn);1591</NoWarn>
     <IsPackable>false</IsPackable>
+
+    <CheckEolTargetFramework>false</CheckEolTargetFramework>
   </PropertyGroup>
 
 

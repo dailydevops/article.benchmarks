@@ -5,20 +5,19 @@ using BenchmarkDotNet.Engines;
 using BenchmarkDotNet.Jobs;
 using NetEvolve.Benchmarks;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 
 [Config(typeof(NetEvolveConfig))]
 [SimpleJob(runtimeMoniker: RuntimeMoniker.Net80)]
 public class ShuffleBenchmarks
 {
-    private readonly List<int> _values;
+    private readonly int[] _values;
     private readonly Consumer _consumer;
     private readonly Random _random;
 
     public ShuffleBenchmarks()
     {
-        _values = Enumerable.Range(1, 50).ToList();
+        _values = Enumerable.Range(1, 50).ToArray();
         _consumer = new Consumer();
 
         _random = Random.Shared;
@@ -46,4 +45,11 @@ public class ShuffleBenchmarks
     [Benchmark]
     public void ShuffleGieselOptimized() =>
         _values.ShuffleGieselOptimized(_random).Consume(_consumer);
+
+    [Benchmark]
+#pragma warning disable CA5394 // Do not use insecure randomness
+#pragma warning disable CA1711 // Identifiers should not have incorrect suffix
+    public void ShuffleDotnetImpl() => _random.Shuffle(_values);
+#pragma warning restore CA1711 // Identifiers should not have incorrect suffix
+#pragma warning restore CA5394 // Do not use insecure randomness
 }
