@@ -11,7 +11,7 @@ using NetEvolve.Benchmarks;
 [SimpleJob(runtimeMoniker: RuntimeMoniker.Net80)]
 public class StringIsNullOrWhitespaceBenchmarks
 {
-    [Params(null, "\t", "Hello World!")]
+    [Params(null!, "\t", "Hello World!")]
     public string? Value { get; set; }
 
     [Benchmark]
