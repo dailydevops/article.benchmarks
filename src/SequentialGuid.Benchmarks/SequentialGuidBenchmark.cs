@@ -20,6 +20,9 @@ public class SequentialGuidBenchmark
     public string Stackalloc() => SequentialGuidCore.Stackalloc();
 
     [Benchmark]
+    public string StackallocWithRandom() => SequentialGuidCore.StackallocWithRandom();
+
+    [Benchmark]
     public string StackallocHex() => SequentialGuidCore.StackallocHex();
 
     [Benchmark]
