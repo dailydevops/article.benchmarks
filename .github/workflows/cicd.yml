@@ -23,6 +23,8 @@ jobs:
     name: Build & Tests
     uses: dailydevops/pipelines/.github/workflows/cicd-dotnet.yml@main
     with:
+      disableCodeFormat: true
+      disableCodeQL: true
       disablePublish: true
       dotnet-logging: ${{ inputs.dotnet-logging }}
       dotnet-version: |
