@@ -9,7 +9,7 @@
     <GlobalPackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" Version="17.8.14" />
   </ItemGroup>
   <ItemGroup>
-    <PackageVersion Include="BenchmarkDotNet" Version="0.13.10" />
+    <PackageVersion Include="BenchmarkDotNet" Version="0.13.11" />
     <PackageVersion Include="coverlet.collector" Version="6.0.0" />
     <PackageVersion Include="coverlet.msbuild" Version="6.0.0" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
