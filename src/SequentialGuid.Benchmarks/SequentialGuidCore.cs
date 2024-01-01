@@ -14,7 +14,7 @@ public static class SequentialGuidCore
     private static readonly RandomNumberGenerator _randomNumber = RandomNumberGenerator.Create();
     private static readonly Random _random = Random.Shared;
 
-    public static string GuidAsBase()
+    public static Guid GuidAsBase()
     {
         var timeStamp = DateTime.UtcNow.Ticks / 10000L;
         Span<byte> timeStampBytes = BitConverter.GetBytes(timeStamp);
@@ -29,10 +29,10 @@ public static class SequentialGuidCore
 
         timeStampBytes.Slice(2, 6).CopyTo(guidBytes.Slice(10, 6));
 
-        return new Guid(guidBytes).ToString("N");
+        return new Guid(guidBytes);
     }
 
-    public static string Stackalloc()
+    public static Guid Stackalloc()
     {
         var timeStamp = DateTime.UtcNow.Ticks / 10000L;
         Span<byte> timeStampBytes = BitConverter.GetBytes(timeStamp);
@@ -47,13 +47,13 @@ public static class SequentialGuidCore
 
         timeStampBytes.Slice(2, 6).CopyTo(guidBytes.Slice(10, 6));
 
-        return new Guid(guidBytes).ToString("N");
+        return new Guid(guidBytes);
     }
 
-    public static string StackallocWithRandom()
+    public static Guid StackallocWithRandom()
     {
         var timeStamp = DateTime.UtcNow.Ticks / 10000L;
-        Span<byte> timeStampBytes = BitConverter.GetBytes(timeStamp);
+        var timeStampBytes = BitConverter.GetBytes(timeStamp).AsSpan();
 
         if (BitConverter.IsLittleEndian)
         {
@@ -65,64 +65,10 @@ public static class SequentialGuidCore
 
         timeStampBytes.Slice(2, 6).CopyTo(guidBytes.Slice(10, 6));
 
-        return new Guid(guidBytes).ToString("N");
+        return new Guid(guidBytes);
     }
 
-    public static string StackallocGuidParse()
-    {
-        var timeStamp = DateTime.UtcNow.Ticks / 10000L;
-        Span<byte> timeStampBytes = BitConverter.GetBytes(timeStamp);
-
-        if (BitConverter.IsLittleEndian)
-        {
-            timeStampBytes.Reverse();
-        }
-
-        ReadOnlySpan<byte> guidBytes = stackalloc byte[16];
-        _random.NextBytes(guidBytes);
-
-        timeStampBytes.Slice(2, 6).CopyTo(guidBytes.Slice(10, 6));
-
-        return Guid.Parse(guidBytes).ToString("N");
-    }
-
-    public static string StackallocHex()
-    {
-        var timeStamp = DateTime.UtcNow.Ticks / 10000L;
-        Span<byte> timeStampBytes = BitConverter.GetBytes(timeStamp);
-
-        if (BitConverter.IsLittleEndian)
-        {
-            timeStampBytes.Reverse();
-        }
-
-        Span<byte> guidBytes = stackalloc byte[16];
-        _randomNumber.GetBytes(guidBytes);
-
-        timeStampBytes.Slice(2, 6).CopyTo(guidBytes.Slice(10, 6));
-
-        return Convert.ToHexString(guidBytes);
-    }
-
-    public static string StackallocToString()
-    {
-        var timeStamp = DateTime.UtcNow.Ticks / 10000L;
-        Span<byte> timeStampBytes = BitConverter.GetBytes(timeStamp);
-
-        if (BitConverter.IsLittleEndian)
-        {
-            timeStampBytes.Reverse();
-        }
-
-        Span<byte> guidBytes = stackalloc byte[16];
-        _randomNumber.GetBytes(guidBytes);
-
-        timeStampBytes.Slice(2, 6).CopyTo(guidBytes.Slice(10, 6));
-
-        return BitConverter.ToString(guidBytes.ToArray());
-    }
-
-    public static string CreateAdp()
+    public static Guid CreateAdp()
     {
         var randomBytes = new byte[10];
         _randomNumber.GetBytes(randomBytes);
@@ -140,6 +86,6 @@ public static class SequentialGuidCore
         Buffer.BlockCopy(randomBytes, 0, guidBytes, 0, 10);
         Buffer.BlockCopy(timestampBytes, 2, guidBytes, 10, 6);
 
-        return new Guid(guidBytes).ToString("N");
+        return new Guid(guidBytes);
     }
 }

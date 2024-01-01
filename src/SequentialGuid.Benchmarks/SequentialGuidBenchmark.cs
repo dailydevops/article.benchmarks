@@ -1,5 +1,6 @@
 ﻿namespace SequentialGuid.Benchmarks;
 
+using System;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Jobs;
 using NetEvolve.Benchmarks;
@@ -14,23 +15,17 @@ using NetEvolve.Benchmarks;
 public class SequentialGuidBenchmark
 {
     [Benchmark(Baseline = true)]
-    public string NewGuid() => System.Guid.NewGuid().ToString("N");
+    public Guid NewGuid() => Guid.NewGuid();
 
     [Benchmark]
-    public string GuidAsBase() => SequentialGuidCore.GuidAsBase();
+    public Guid GuidAsBase() => SequentialGuidCore.GuidAsBase();
 
     [Benchmark]
-    public string Stackalloc() => SequentialGuidCore.Stackalloc();
+    public Guid Stackalloc() => SequentialGuidCore.Stackalloc();
 
     [Benchmark]
-    public string StackallocWithRandom() => SequentialGuidCore.StackallocWithRandom();
+    public Guid StackallocWithRandom() => SequentialGuidCore.StackallocWithRandom();
 
     [Benchmark]
-    public string StackallocHex() => SequentialGuidCore.StackallocHex();
-
-    [Benchmark]
-    public string StackallocToString() => SequentialGuidCore.StackallocToString();
-
-    [Benchmark]
-    public string CreateAdp() => SequentialGuidCore.CreateAdp();
+    public Guid CreateAdp() => SequentialGuidCore.CreateAdp();
 }
