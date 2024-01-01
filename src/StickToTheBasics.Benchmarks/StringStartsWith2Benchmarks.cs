@@ -1,9 +1,9 @@
 ﻿namespace StickToTheBasics.Benchmarks;
 
+using System;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Jobs;
 using NetEvolve.Benchmarks;
-using System;
 
 [Config(typeof(NetEvolveConfig))]
 [SimpleJob(runtimeMoniker: RuntimeMoniker.Net50)]

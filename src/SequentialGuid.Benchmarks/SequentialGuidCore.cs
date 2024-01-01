@@ -101,9 +101,7 @@ public static class SequentialGuidCore
 
         timeStampBytes.Slice(2, 6).CopyTo(guidBytes.Slice(10, 6));
 
-#pragma warning disable CA1308 // Normalize strings to uppercase
         return Convert.ToHexString(guidBytes);
-#pragma warning restore CA1308 // Normalize strings to uppercase
     }
 
     public static string StackallocToString()
@@ -121,9 +119,7 @@ public static class SequentialGuidCore
 
         timeStampBytes.Slice(2, 6).CopyTo(guidBytes.Slice(10, 6));
 
-#pragma warning disable CA1308 // Normalize strings to uppercase
         return BitConverter.ToString(guidBytes.ToArray());
-#pragma warning restore CA1308 // Normalize strings to uppercase
     }
 
     public static string CreateAdp()
