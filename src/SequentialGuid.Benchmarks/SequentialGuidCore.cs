@@ -68,6 +68,24 @@ public static class SequentialGuidCore
         return new Guid(guidBytes).ToString("N");
     }
 
+    public static string StackallocGuidParse()
+    {
+        var timeStamp = DateTime.UtcNow.Ticks / 10000L;
+        Span<byte> timeStampBytes = BitConverter.GetBytes(timeStamp);
+
+        if (BitConverter.IsLittleEndian)
+        {
+            timeStampBytes.Reverse();
+        }
+
+        ReadOnlySpan<byte> guidBytes = stackalloc byte[16];
+        _random.NextBytes(guidBytes);
+
+        timeStampBytes.Slice(2, 6).CopyTo(guidBytes.Slice(10, 6));
+
+        return Guid.Parse(guidBytes).ToString("N");
+    }
+
     public static string StackallocHex()
     {
         var timeStamp = DateTime.UtcNow.Ticks / 10000L;

@@ -14,6 +14,9 @@ using NetEvolve.Benchmarks;
 public class SequentialGuidBenchmark
 {
     [Benchmark(Baseline = true)]
+    public string NewGuid() => System.Guid.NewGuid().ToString("N");
+
+    [Benchmark]
     public string GuidAsBase() => SequentialGuidCore.GuidAsBase();
 
     [Benchmark]
