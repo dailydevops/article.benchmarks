@@ -1,11 +1,11 @@
 ﻿namespace Shuffle.Benchmarks;
 
+using System;
+using System.Linq;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Engines;
 using BenchmarkDotNet.Jobs;
 using NetEvolve.Benchmarks;
-using System;
-using System.Linq;
 
 [Config(typeof(NetEvolveConfig))]
 [SimpleJob(runtimeMoniker: RuntimeMoniker.Net80)]
