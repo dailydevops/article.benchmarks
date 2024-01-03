@@ -42,4 +42,5 @@ New-Project `
   -DisableUnitTests $DisableUnitTests `
   -DisableIntegrationTests $DisableIntegrationTests `
   -SolutionFile ".\Article.Benchmarks.sln" `
-  -OutputDirectory (Get-Location)
+  -OutputDirectory (Get-Location) `
+  -EnableProjectGrouping $false
