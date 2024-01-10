@@ -38,13 +38,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shuffle.Benchmarks", "src\S
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Shared.NetEvolveConfig", "src\Shared.NetEvolveConfig\Shared.NetEvolveConfig.shproj", "{C889097A-77D0-4496-843B-4FBEE3C16295}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwitchSyntacticSugar.Benchmarks", "src\SwitchSyntacticSugar.Benchmarks\SwitchSyntacticSugar.Benchmarks.csproj", "{1BEE9AEB-41E3-46F6-84E4-C4333D116BF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SwitchSyntacticSugar.Benchmarks", "src\SwitchSyntacticSugar.Benchmarks\SwitchSyntacticSugar.Benchmarks.csproj", "{1BEE9AEB-41E3-46F6-84E4-C4333D116BF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StickToTheBasics.Benchmarks", "src\StickToTheBasics.Benchmarks\StickToTheBasics.Benchmarks.csproj", "{79EF5B9D-82EA-4539-817D-425820859D95}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StickToTheBasics.Benchmarks", "src\StickToTheBasics.Benchmarks\StickToTheBasics.Benchmarks.csproj", "{79EF5B9D-82EA-4539-817D-425820859D95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SubstringSlice.Benchmarks", "src\SubstringSlice.Benchmarks\SubstringSlice.Benchmarks.csproj", "{5F04B6FF-0B89-4DB3-A50F-AFDDE019F00C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SubstringSlice.Benchmarks", "src\SubstringSlice.Benchmarks\SubstringSlice.Benchmarks.csproj", "{5F04B6FF-0B89-4DB3-A50F-AFDDE019F00C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SequentialGuid.Benchmarks", "src\SequentialGuid.Benchmarks\SequentialGuid.Benchmarks.csproj", "{C3CCA76F-2B44-4B5F-BBC0-9E943669BC11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SequentialGuid.Benchmarks", "src\SequentialGuid.Benchmarks\SequentialGuid.Benchmarks.csproj", "{C3CCA76F-2B44-4B5F-BBC0-9E943669BC11}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SearchValues.Benchmarks", "src\SearchValues.Benchmarks\SearchValues.Benchmarks.csproj", "{81DA9ECE-21A2-42AB-9A28-D5560CC75A92}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -116,6 +118,18 @@ Global
 		{C3CCA76F-2B44-4B5F-BBC0-9E943669BC11}.Release|x64.Build.0 = Release|Any CPU
 		{C3CCA76F-2B44-4B5F-BBC0-9E943669BC11}.Release|x86.ActiveCfg = Release|Any CPU
 		{C3CCA76F-2B44-4B5F-BBC0-9E943669BC11}.Release|x86.Build.0 = Release|Any CPU
+		{81DA9ECE-21A2-42AB-9A28-D5560CC75A92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81DA9ECE-21A2-42AB-9A28-D5560CC75A92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81DA9ECE-21A2-42AB-9A28-D5560CC75A92}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{81DA9ECE-21A2-42AB-9A28-D5560CC75A92}.Debug|x64.Build.0 = Debug|Any CPU
+		{81DA9ECE-21A2-42AB-9A28-D5560CC75A92}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{81DA9ECE-21A2-42AB-9A28-D5560CC75A92}.Debug|x86.Build.0 = Debug|Any CPU
+		{81DA9ECE-21A2-42AB-9A28-D5560CC75A92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81DA9ECE-21A2-42AB-9A28-D5560CC75A92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81DA9ECE-21A2-42AB-9A28-D5560CC75A92}.Release|x64.ActiveCfg = Release|Any CPU
+		{81DA9ECE-21A2-42AB-9A28-D5560CC75A92}.Release|x64.Build.0 = Release|Any CPU
+		{81DA9ECE-21A2-42AB-9A28-D5560CC75A92}.Release|x86.ActiveCfg = Release|Any CPU
+		{81DA9ECE-21A2-42AB-9A28-D5560CC75A92}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -127,8 +141,18 @@ Global
 		{79EF5B9D-82EA-4539-817D-425820859D95} = {340EE75C-24A0-4F70-B776-1944029DF3E8}
 		{5F04B6FF-0B89-4DB3-A50F-AFDDE019F00C} = {340EE75C-24A0-4F70-B776-1944029DF3E8}
 		{C3CCA76F-2B44-4B5F-BBC0-9E943669BC11} = {340EE75C-24A0-4F70-B776-1944029DF3E8}
+		{81DA9ECE-21A2-42AB-9A28-D5560CC75A92} = {340EE75C-24A0-4F70-B776-1944029DF3E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {76085CF9-F179-4043-844D-3EA3521B5F15}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		src\Shared.NetEvolveConfig\Shared.NetEvolveConfig.projitems*{1bee9aeb-41e3-46f6-84e4-c4333d116bf5}*SharedItemsImports = 5
+		src\Shared.NetEvolveConfig\Shared.NetEvolveConfig.projitems*{5f04b6ff-0b89-4db3-a50f-afdde019f00c}*SharedItemsImports = 5
+		src\Shared.NetEvolveConfig\Shared.NetEvolveConfig.projitems*{79ef5b9d-82ea-4539-817d-425820859d95}*SharedItemsImports = 5
+		src\Shared.NetEvolveConfig\Shared.NetEvolveConfig.projitems*{7f9509fa-dfff-4274-a7f0-7131b3e285c7}*SharedItemsImports = 5
+		src\Shared.NetEvolveConfig\Shared.NetEvolveConfig.projitems*{81da9ece-21a2-42ab-9a28-d5560cc75a92}*SharedItemsImports = 5
+		src\Shared.NetEvolveConfig\Shared.NetEvolveConfig.projitems*{c3cca76f-2b44-4b5f-bbc0-9e943669bc11}*SharedItemsImports = 5
+		src\Shared.NetEvolveConfig\Shared.NetEvolveConfig.projitems*{c889097a-77d0-4496-843b-4fbee3c16295}*SharedItemsImports = 13
 	EndGlobalSection
 EndGlobal
