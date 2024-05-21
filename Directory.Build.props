@@ -6,5 +6,23 @@
   </PropertyGroup>
 
   <Import Project="$(DirEngineeringSettings)sln.build.props" />
+  <Import Project="$(DirEngineeringSettings)src.build.props" Condition=" '$(IsTestableProject)' != 'true' " />
+  <Import Project="$(DirEngineeringSettings)tests.build.props" Condition=" '$(IsTestableProject)' == 'true' " />
+
+  <PropertyGroup>
+    <Title>.NET Benchmarks</Title>
+    <Description>Benchmarks for the Article Series on Daily DevOps &amp; .NET</Description>
+    <PackageTags>dotnet;benchmarks;performance</PackageTags>
+    <PackageProjectUrl>https://github.com/dailydevops/article.benchmarks</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/dailydevops/article.benchmarks.git</RepositoryUrl>
+
+    <NoWarn>$(NoWarn);1591</NoWarn>
+    <IsPackable>false</IsPackable>
+    <CopyrightStartYear>2022</CopyrightStartYear>
+
+    <CheckEolTargetFramework>false</CheckEolTargetFramework>
+  </PropertyGroup>
+
+  <Import Project=".\src\Shared.NetEvolveConfig\Shared.NetEvolveConfig.projitems" Label="Shared" Condition=" '$(IsTestableProject)' != 'true' " />
 
 </Project>
