@@ -16,6 +16,7 @@
     <PackageProjectUrl>https://github.com/dailydevops/article.benchmarks</PackageProjectUrl>
     <RepositoryUrl>https://github.com/dailydevops/article.benchmarks.git</RepositoryUrl>
 
+    <PackageReleaseNotes>$(PackageProjectUrl)/releases/</PackageReleaseNotes>
     <NoWarn>$(NoWarn);1591</NoWarn>
     <IsPackable>false</IsPackable>
     <CopyrightStartYear>2022</CopyrightStartYear>
