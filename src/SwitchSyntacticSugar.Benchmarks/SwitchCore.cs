@@ -40,7 +40,7 @@ public static class SwitchCore
             DayOfWeek.Wednesday => "10-3",
             DayOfWeek.Thursday => "9-5",
             DayOfWeek.Friday => "10-3",
-            _ => ""
+            _ => "",
         };
 
     private static readonly Dictionary<DayOfWeek, string> _workSchedule =
@@ -50,7 +50,7 @@ public static class SwitchCore
             { DayOfWeek.Tuesday, "10-3" },
             { DayOfWeek.Wednesday, "10-3" },
             { DayOfWeek.Thursday, "9-5" },
-            { DayOfWeek.Friday, "10-3" }
+            { DayOfWeek.Friday, "10-3" },
         };
 
     public static string GetWorkTimeDictionary(DayOfWeek dayOfWeek)
