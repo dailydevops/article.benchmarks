@@ -12,9 +12,7 @@ internal sealed class NetEvolveConfig : ManualConfig
     {
         SummaryStyle = SummaryStyle.Default.WithRatioStyle(RatioStyle.Trend);
 
-        _ = AddDiagnoser(
-            new MemoryDiagnoser(new MemoryDiagnoserConfig())
-            );
+        _ = AddDiagnoser(new MemoryDiagnoser(new MemoryDiagnoserConfig()));
 
         Orderer = new DefaultOrderer(SummaryOrderPolicy.SlowestToFastest);
     }
